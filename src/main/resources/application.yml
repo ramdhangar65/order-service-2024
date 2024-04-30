@@ -1,0 +1,72 @@
+server:
+  port: 8081
+
+#spring:
+#  redis.host=localhost
+#  spring.redis.port=6379
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+
+### mongoDB
+### Database configuration
+spring:
+  redis:
+    host: localhost
+    port: 6379 # Specify your Redis port here
+  application:
+    name: order-service
+
+# Retry Properties Configuration
+#  retry:
+#    maxAttempts: 4
+#    initialInterval: 1000 # in milliseconds
+#    multiplier: 2.0
+#    maxInterval: 10000 # in milliseconds
+#    jitter: 100 # in milliseconds
+
+#  profiles:
+#    active: default
+#
+#  cloud:
+#    config:
+#     enabled: false
+#
+#     # uri: http://localhost:8083
+#
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+  data:
+    mongodb:
+      host: localhost
+      uri : mongodb://localhost:27017/
+      database : mongoDB-dev
+  config:
+    import: optional:configserver:http://localhost:8888
+
+
+
+##
+##  # Profiling in Spring Boot
+##
+#  config:
+#    import: optional:configserver:http://localhost:8888
+##
+# H2 Database configuration
+#spring:
+#  application:
+#    name: order-service
+#  datasource:
+#    url: jdbc:h2:mem:mydb
+#    username: sa
+#    password: password
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+##
+###logging:
+##logging:
+##  file.name: C:/Users/ramlal.dhangar/Training-Project/application-Logs/order-service.log
